@@ -4,7 +4,7 @@
 ## This function create a special Matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-	m<-NULL
+	m<-NULL ＃＃initial the m ready for store the Matrix
 	set<-function(y){
 		x<<-y
 		m<<-NULL
@@ -23,8 +23,9 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
         m<-x$getinverse()
         if(!is.null(m)){
+        	##This function check if the Matrix is empty
         	message("Loading Cached Matrix")
-        	m
+        	return(m)
         }
         data<-x$get()
         m<-solve(data,...)
